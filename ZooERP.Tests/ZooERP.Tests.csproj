@@ -1,0 +1,35 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <!-- Меняем на net7.0 (или net6.0, если у вас установлен .NET 6) -->
+        <TargetFramework>net9.0</TargetFramework>
+        <!-- Говорим, что это тестовый проект -->
+        <IsTestProject>true</IsTestProject>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <!-- Пакет, чтобы dotnet test умел запускать тесты -->
+        <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.6.2" />
+        <!-- Стабильная версия xUnit -->
+        <PackageReference Include="xunit" Version="2.4.2" />
+        <PackageReference Include="xunit.runner.visualstudio" Version="2.4.5" />
+        <!-- Стабильная версия Microsoft.Extensions.DependencyInjection под .NET 7 -->
+        <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="9.0.0" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <!-- Ссылка на основной проект, где лежит ваш ZooERP -->
+        <ProjectReference Include="..\ZooERP\ZooERP.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <PackageReference Include="coverlet.collector" Version="3.2.0" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Folder Include="TestResults\" />
+    </ItemGroup>
+
+</Project>
